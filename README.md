@@ -37,6 +37,31 @@
 ```text
 ghcr.io/你的GitHub用户名/你的仓库名:latest
 
+容器端口 (Port)
+固定填写：3000
+
+变量名 (Key),变量值示例 (Value),参数说明与获取方式
+UUID,ad58bd8c-d279-48c4-aea2-06c5b63b58f9,节点独立密码。这相当于你这台“服务器”的连接密码。请使用上方的 UUID 生成器生成一个标准的 36 位字符串填入。千万不要用示例里的 UUID！
+ARGO_TOKEN,eyJhIjoiYTM...非常长的一串字母...xODk0In0=,Cloudflare 穿透密钥。你需要登录 Cloudflare Zero Trust，在 Tunnels 中新建一条隧道，选择 Cloudflared 部署方式，在官方给出的安装命令中，复制出那串极长的乱码 Token。
+
+标准 URI 链接模板（请替换括号中的内容）：
+
+Plaintext
+vless://[填入你的UUID]@[填入你的CF域名]:443?encryption=none&security=tls&sni=[填入你的CF域名]&type=ws&host=[填入你的CF域名]&path=%2Fblog#DCDeploy-Argo%E8%8A%82%E7%82%B9
+
+参数避坑提示：
+
+域名：@ 后面、sni= 后面、host= 后面，这三个地方必须全部填写你绑定 Argo 隧道的那个 Cloudflare 域名。
+
+路径转码：如果你的伪装路径是 /blog，在链接里必须转码成 %2Fblog（斜杠 / 替换为 %2F）。
+
+🎁 终极福利：一键生成批量优选节点
+如果你觉得手动替换参数太麻烦，或者想在基础节点上叠加 Cloudflare 优选 IP 来提升速度，我为你准备了专属自动化工具！
+
+只需粘贴上面的基础节点链接，再随意粘贴一批优选 IP（无惧乱码，自动分行），工具就能一瞬间裂变出几十个属于你的极速优选节点！
+
+👉 点击此处获取一键生成工具：科技共享专属博客:https://kjgx668.blogspot.com/2026/06/vless-body-font-family-segoe-ui-tahoma.html
+
 ## ⚖️ 许可协议与免责声明 (License & Disclaimer)
 
 本项目包含的所有代码、脚本及教程内容，均由 **@科技共享** 原创编写或基于开源项目二次开发整理，并在 **[CC BY-NC-SA 4.0 (知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)** 下提供。
