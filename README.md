@@ -6,6 +6,10 @@
 
 **[uuid生成器](https://99688988.xyz/uuid-generator/)**
 
+**[海量优选域名](https://kjgx668.blogspot.com/2023/08/cloudflare-ip-cloudflare-cf.html/)**
+
+**[VLESS 智能节点裂变器](https://kjgx668.blogspot.com/2026/06/vless-body-font-family-segoe-ui-tahoma.html/)**
+
 ---
 
 ## ⚠️ 部署前必读：如何正确 Fork 并自动构建镜像？
